@@ -41,25 +41,26 @@ Clone this repository to your local machine or directly to your EC2 instance:
 git clone https://github.com/yourusername/repository-name.git
 cd repository-name
 
-2. Update Email Credentials
-
+### 2. Update Email Credentials
 In the monitor.sh script, replace the following variables with your email and app password:
 
+```bash
 EMAIL_FROM="your_email@gmail.com"
 EMAIL_TO="recipient_email@gmail.com"
 EMAIL_PASS="your_app_password"
 
-3. Set Cron Job for Automated Execution
-
+### 3. Set Cron Job for Automated Execution
 To ensure the script runs every 3 hours, add it to your cron jobs:
 
+```bash
 crontab -e
 
-Then, add the following line:
+**Then, add the following line:
 
+```bash
 0 */3 * * * /path/to/monitor.sh
 
-4. Deploy via CI/CD Pipeline (GitHub Actions)
+### 4. Deploy via CI/CD Pipeline (GitHub Actions)
 
 This repository includes a .github folder with a pre-configured CI/CD pipeline. This pipeline automatically deploys the script to your EC2 instance whenever changes are pushed to the repository.
 
@@ -67,39 +68,29 @@ Ensure that the following steps are completed:
 
 1. SSH Access: Your EC2 instance must be accessible via SSH.
 
-
 2. AWS Credentials: Set up your AWS credentials on GitHub using GitHub Secrets for deployment.
-
 
 3. Push to GitHub: Once everything is configured, any new push to the repository will trigger the GitHub Actions workflow to deploy the monitoring script to your EC2 instance.
 
 
-
-
-Running the Script
-
-After setup, the script will:
-
+### Running the Script
+**After setup, the script will**:
 Monitor system resources (CPU, memory, and disk).
-
 Send email alerts if any resource exceeds the threshold (e.g., 80%).
-
 Log all alerts into /var/log/system_monitor.log.
 
 
-You can manually run the script by executing:
+**You can manually run the script by executing**:
 
+```bash
 ./monitor.sh
 
 
-Acknowledgments
+### Acknowledgments
 
 Inspired by system monitoring tools like Datadog but built from scratch.
-
 Thanks to the GitHub Actions documentation for helping with CI/CD setup.
-
 Special mention to msmtp for enabling email functionality in Bash.
-
 
 ### How to Use
 
@@ -107,5 +98,5 @@ Special mention to msmtp for enabling email functionality in Bash.
 2. Configure your system to run the script automatically every 3 hours.
 3. Push the project to GitHub, and configure GitHub Actions to deploy it to your EC2 instance.
 
-This `README.md` provides clear instructions to get your project running from scratch! Let me know if you'd like any adjustments!
+### This `README.md` provides clear instructions to get your project running from scratch! Let me know if you'd like any adjustments!
 
