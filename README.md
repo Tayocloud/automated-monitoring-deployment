@@ -48,18 +48,18 @@ In the monitor.sh script, replace the following variables with your email and ap
 EMAIL_FROM="your_email@gmail.com"
 EMAIL_TO="recipient_email@gmail.com"
 EMAIL_PASS="your_app_password"
-
+```
 ### 3. Set Cron Job for Automated Execution
 To ensure the script runs every 3 hours, add it to your cron jobs:
 
 ```bash
 crontab -e
-
+```
 **Then, add the following line:
 
 ```bash
 0 */3 * * * /path/to/monitor.sh
-
+```
 ### 4. Deploy via CI/CD Pipeline (GitHub Actions)
 
 This repository includes a .github folder with a pre-configured CI/CD pipeline. This pipeline automatically deploys the script to your EC2 instance whenever changes are pushed to the repository.
@@ -84,7 +84,7 @@ Log all alerts into /var/log/system_monitor.log.
 
 ```bash
 ./monitor.sh
-
+```
 
 ### Acknowledgments
 
