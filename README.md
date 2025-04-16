@@ -40,7 +40,7 @@ Clone this repository to your local machine or directly to your EC2 instance:
 ```bash
 git clone https://github.com/yourusername/repository-name.git
 cd repository-name
-
+```
 ### 2. Update Email Credentials
 In the monitor.sh script, replace the following variables with your email and app password:
 
